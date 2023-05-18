@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sales Forecasting with Unemployment rate</title>
+
+</head>
+
+<body>
+    <center>
+ <div class="login">
+	<h1>Sales Forecasting with Unemployment rate</h1>
+
+     <!-- Input For Querying to ML Model -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+        <label for="store">Store:</label>
+    	  <input type="text" name="store" placeholder="Store" required="required"/><br><br>
+
+        <label for="dept">Dept:</label>
+        <input type="text" name="dept" placeholder="Dept" required="required"/><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+
+        <label for="isholiday">IsHoliday:</label>
+        <select id="isholiday" name="isholiday"><br><br>
+          <option value="0">False</option>
+          <option value="1">True</option>
+        </select><br><br>
+
+        <center><button type="submit" class="btn btn-primary btn-block btn-large">Predict Sales</button></center>
+    </form>
+   <br>
+    {% if output %}
+       <h3> Sales should be <b style="color:red;">$ {{ output }}</b>  </h3>
+    {% endif %}
+   </div>
+</center>
+</body>
+</html>
