@@ -8189,3 +8189,4 @@ Store,Date,Temperature,Fuel_Price,CPI,Unemployment,IsHoliday,Type,Size
 45,2013-07-12,79.37,3.614,,,False,B,118221
 45,2013-07-19,82.84,3.737,,,False,B,118221
 45,2013-07-26,76.06,3.804,,,False,B,118221
+1,2023-07-05,88.31,4.572,176.0822498,8.564,False,A,85127
