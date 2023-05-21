@@ -3,11 +3,9 @@ import pandas as pd
 import datetime as dt
 from flask import Flask, request, jsonify, render_template
 import joblib
-import pickle
 
 app = Flask(__name__)
 model = joblib.load('models/salesModel.pkl')
-#model = pickle.load(open('salesModel.pkl', 'rb'))
 fet = pd.read_csv('output/merged_features.csv')
 
 @app.route('/')
@@ -55,7 +53,6 @@ def predict():
     final_features = [np.array(f_features)]
     output = model.predict(final_features)[0]
     return render_template('home.html', output=output)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
