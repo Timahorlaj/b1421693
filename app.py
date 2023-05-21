@@ -50,7 +50,7 @@ def predict():
         f_features.append(df['Unemployment'])
         f_features.append(d.date().year)
 
-    final_features = [np.array(f_features)]
+    final_features = np.array([f_features], dtype=object)
     output = model.predict(final_features)[0]
     return render_template('home.html', output=output)
 
